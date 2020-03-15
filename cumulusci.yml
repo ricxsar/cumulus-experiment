@@ -1,0 +1,19 @@
+minimum_cumulusci_version: '3.8.0'
+project:
+    name: cumulus-test
+    package:
+        name:  cumulus-test
+        api_version: '48.0'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/cumulus-test/tests
+            options:
+                outputdir: robot/cumulus-test/results
+
+    robot_testdoc:
+        options:
+            path: robot/cumulus-test/tests
+            output: robot/cumulus-test/doc/cumulus-test_tests.html
