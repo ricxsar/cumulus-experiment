@@ -5,6 +5,21 @@ project:
         name:  cumulus-test
         api_version: '48.0'
     source_format: sfdx
+    dependencies:
+        - github: https://github.com/SalesforceFoundation/NPSP
+        - namespace: ASPHPP
+          version: 2.18
+        - namespace: ASPHPPADDON
+          version: 2.13
+        - namespace: ProntoPlus
+          version: 2.13
+        - namespace: ASCI
+          version: 2.5
+
+sources:
+    npsp:
+        github: https://github.com/SalesforceFoundation/NPSP
+        namespace: npsp
 
 tasks:
     robot:
@@ -17,3 +32,12 @@ tasks:
         options:
             path: robot/cumulus-test/tests
             output: robot/cumulus-test/doc/cumulus-test_tests.html
+
+plans:
+    install:
+        slug: install
+        title: Install
+        tier: primary
+        steps:
+            1:
+                flow: install_prod
